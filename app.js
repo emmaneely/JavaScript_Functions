@@ -92,23 +92,23 @@ function dataPlan(planLimit, day, usage) {
     } else {
         if (userAvg > expectedAvg) {
             console.log(`${day} days used, ${daysRemain} days remaining
-            Average daily use: ${expectedAvg} GB/day
-            You are EXCEEDING your average daily use (${userAvg} GB/day).
-            At this rate, you'll exceed your data plan by ${totalOverage} GB.
-            To stay below your data plan, use no more than ${targetUse} GB/day.`);
+            Average daily use: ${expectedAvg.toFixed(2)} GB/day
+            You are EXCEEDING your average daily use (${userAvg.toFixed(2)} GB/day).
+            At this rate, you'll exceed your data plan by ${totalOverage.toFixed(2)} GB.
+            To stay below your data plan, use no more than ${targetUse.toFixed(2)} GB/day.`);
         } else if (userAvg < expectedAvg) {
             console.log(`${day} days used, ${daysRemain} days remaining
-            Average daily use: ${expectedAvg} GB/day
-            You are UNDER your average daily use (${userAvg} GB/day).
-            At this rate, you'll have ${totalUnder} GB left over.
-            To use the rest of your data plan, you can use ${targetUse} GB/day.`);
+            Average daily use: ${expectedAvg.toFixed(2)} GB/day
+            You are UNDER your average daily use (${userAvg.toFixed(2)} GB/day).
+            At this rate, you'll have ${totalUnder.toFixed(2)} GB left over.
+            To use the rest of your data plan, you can use ${targetUse.toFixed(2)} GB/day.`);
         } else {
             console.log(`${day} days used, ${daysRemain} days remaining
-            Average daily use: ${expectedAvg} GB/day
-            Your average daily use is ON TARGET at (${userAvg} GB/day).
-            At this rate, you'll have ${totalOverage} GB left over.
-            To stay on target for your data plan, use no more than ${targetUse} GB/day.`);
+            Average daily use: ${expectedAvg.toFixed(2)} GB/day
+            Your average daily use is ON TARGET at (${userAvg.toFixed(2)} GB/day).
+            At this rate, you'll have ${totalOverage.toFixed(2)} GB left over.
+            To stay on target for your data plan, use no more than ${targetUse.toFixed(2)} GB/day.`);
         }
     }
 }
-dataPlan(100, 15, 50);
+dataPlan(100.7, 15, 40.5);
