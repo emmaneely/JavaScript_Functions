@@ -51,8 +51,26 @@ function quadFinder(x, y) {
         console.log("Not valid coordinates!");
     }
 }
-quadFinder(1, 2);
+// quadFinder(1, 2);
 // x +, y + = 1
 // x -, y + = 2
 // x -, y - = 3
 // x +, y - = 4
+
+// Exercise 4 Section
+console.log("EXERCISE 4:\n==========\n");
+
+function triangle(a, b, c) {
+    if (a + b > c && b + c > a && a + c > b) {
+        if (a == b && b == c) {
+            console.log("That is an equilateral triangle!");
+        } else if (a == b || b == c || c == a) {
+            console.log("That is an isosceles triangle!");
+        } else {
+            console.log("That is a scalene triangle!");
+        }
+    } else {
+        console.log ("Not a valid triangle!");
+    }
+}
+triangle(5, 10, 12);
