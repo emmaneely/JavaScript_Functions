@@ -73,4 +73,42 @@ function triangle(a, b, c) {
         console.log ("Not a valid triangle!");
     }
 }
-triangle(5, 10, 12);
+// triangle(5, 10, 12);
+
+// Exercise 5 Section
+console.log("EXERCISE 5:\n==========\n");
+
+function dataPlan(planLimit, day, usage) {
+    let expectedAvg = planLimit / 30;
+    let userAvg = usage / day;
+    let totalUserAvg = userAvg * 30;
+    let daysRemain = 30 - day;
+    let totalOverage = totalUserAvg - planLimit;
+    let totalUnder = totalOverage * -1;
+    let targetUse = (planLimit - usage) / daysRemain;
+
+    if (usage > planLimit) {
+        console.log (`You are out of data! You have used ${usage} GB of your ${planLimit} GB data plan.`);
+    } else {
+        if (userAvg > expectedAvg) {
+            console.log(`${day} days used, ${daysRemain} days remaining
+            Average daily use: ${expectedAvg} GB/day
+            You are EXCEEDING your average daily use (${userAvg} GB/day).
+            At this rate, you'll exceed your data plan by ${totalOverage} GB.
+            To stay below your data plan, use no more than ${targetUse} GB/day.`);
+        } else if (userAvg < expectedAvg) {
+            console.log(`${day} days used, ${daysRemain} days remaining
+            Average daily use: ${expectedAvg} GB/day
+            You are UNDER your average daily use (${userAvg} GB/day).
+            At this rate, you'll have ${totalUnder} GB left over.
+            To use the rest of your data plan, you can use ${targetUse} GB/day.`);
+        } else {
+            console.log(`${day} days used, ${daysRemain} days remaining
+            Average daily use: ${expectedAvg} GB/day
+            Your average daily use is ON TARGET at (${userAvg} GB/day).
+            At this rate, you'll have ${totalOverage} GB left over.
+            To stay on target for your data plan, use no more than ${targetUse} GB/day.`);
+        }
+    }
+}
+dataPlan(100, 15, 50);
